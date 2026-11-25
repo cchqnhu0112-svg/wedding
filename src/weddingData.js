@@ -53,7 +53,7 @@ export const weddingData = {
   ceremony: {
     type: "LỄ VU QUY",
     title: "LỄ VU QUY",
-    subtitle: "TRÂN TRỌNG BÁO TIN LỄ VU QUY CỦA CON CHÚNG TÔI",
+    subtitle: "TRÂN TRỌNG BÁO TIN LỄ VU QUY CỦA CON CHÚNG MÌNH",
     time: "08:30",
     dateFull: "THỨ BẢY - NGÀY 26 THÁNG 12 NĂM 2026",
     venue: "THÁNH ĐƯỜNG GIÁO XỨ PHÚ LÂM",
@@ -139,62 +139,29 @@ export const weddingData = {
     ]
   },
 
-  // Gallery Photos (9 photos from wedding album)
+  // Gallery Photos - Full album
   gallery: [
-    {
-      id: 1,
-      url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80",
-      thumb: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80",
-      caption: "Khoảnh khắc ngọt ngào của Thanh Sơn & Quỳnh Như"
-    },
-    {
-      id: 2,
-      url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80",
-      thumb: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80",
-      caption: "Nụ cười rạng rỡ của em là niềm hạnh phúc của anh"
-    },
-    {
-      id: 3,
-      url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
-      thumb: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80",
-      caption: "Cùng nhau bước đi trên con đường tương lai dưới sự chúc lành của Chúa"
-    },
-    {
-      id: 4,
-      url: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=1200&q=80",
-      thumb: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=600&q=80",
-      caption: "Vòng tay ấm áp giữa thiên nhiên bao la"
-    },
-    {
-      id: 5,
-      url: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80",
-      thumb: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=600&q=80",
-      caption: "Tình yêu bắt đầu từ những điều giản dị nhất"
-    },
-    {
-      id: 6,
-      url: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80",
-      thumb: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=600&q=80",
-      caption: "Ánh mắt trao nhau thay ngàn lời muốn nói"
-    },
-    {
-      id: 7,
-      url: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80",
-      thumb: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=600&q=80",
-      caption: "Bó hoa cưới xinh tươi cho ngày trọng đại"
-    },
-    {
-      id: 8,
-      url: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1200&q=80",
-      thumb: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=600&q=80",
-      caption: "Trao nhau chiếc nhẫn đính ước trọn đời"
-    },
-    {
-      id: 9,
-      url: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80",
-      thumb: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80",
-      caption: "Mãi mãi bên nhau từ hôm nay và mãi về sau"
-    }
+    // === CẤP 3 ===
+    { id: 1, url: "/album/hs-1.jpg", thumb: "/album/hs-1.jpg", caption: "Những năm tháng cấp 3 cùng nhau" },
+    { id: 2, url: "/album/hs-2.jpg", thumb: "/album/hs-2.jpg", caption: "Những năm tháng cấp 3 cùng nhau" },
+    { id: 3, url: "/album/hs-3.jpg", thumb: "/album/hs-3.jpg", caption: "Những năm tháng cấp 3 cùng nhau" },
+    // === TỐT NGHIỆP ===
+    { id: 6, url: "/album/grad-1.jpg", thumb: "/album/grad-1.jpg", caption: "Chúng mình đã cùng nhau tốt nghiệp Đại học" },
+    { id: 7, url: "/album/grad-2.jpg", thumb: "/album/grad-2.jpg", caption: "Chúng mình đã cùng nhau tốt nghiệp Đại học" },
+    // === ĐÁM CƯỚI ===
+    { id: 8,  url: "/album/wedding-fun-1.jpg", thumb: "/album/wedding-fun-1.jpg", caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
+    { id: 9,  url: "/album/wedding-fun-2.jpg", thumb: "/album/wedding-fun-2.jpg", caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
+    { id: 10, url: "/album/wedding-fun-3.jpg", thumb: "/album/wedding-fun-3.jpg", caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
+    { id: 11, url: "/album/wedding-fun-4.jpg", thumb: "/album/wedding-fun-4.jpg", caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
+    { id: 12, url: "/album/wedding-5.jpg",     thumb: "/album/wedding-5.jpg",     caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
+    { id: 13, url: "/album/wedding-6.jpg",     thumb: "/album/wedding-6.jpg",     caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
+    { id: 14, url: "/album/wedding-7.jpg",     thumb: "/album/wedding-7.jpg",     caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
+    { id: 15, url: "/album/wedding-8.jpg",     thumb: "/album/wedding-8.jpg",     caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
+    { id: 16, url: "/album/wedding-9.jpg",     thumb: "/album/wedding-9.jpg",     caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
+    { id: 17, url: "/album/wedding-10.jpg",    thumb: "/album/wedding-10.jpg",    caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
+    { id: 18, url: "/album/wedding-11.jpg",    thumb: "/album/wedding-11.jpg",    caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
+    { id: 19, url: "/album/wedding-12.jpg",    thumb: "/album/wedding-12.jpg",    caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
+    { id: 20, url: "/album/wedding-13.webp",   thumb: "/album/wedding-13.webp",   caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
   ],
 
   // Guestbook Wishes (Sample wishes tailored for Thanh Sơn & Quỳnh Như)

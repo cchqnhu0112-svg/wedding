@@ -42,7 +42,7 @@ export const TopBar = ({
     if (navigator.share) {
       navigator.share({
         title: `${weddingData.groom.shortName} & ${weddingData.bride.shortName} — Thiệp Cưới Online`,
-        text: 'Trân trọng kính mời quý khách đến chung vui cùng gia đình chúng tôi!',
+        text: 'Trân trọng kính mời quý khách đến chung vui cùng gia đình chúng mình!',
         url: window.location.href
       }).catch(() => {});
     } else {

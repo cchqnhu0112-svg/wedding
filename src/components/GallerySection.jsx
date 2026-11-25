@@ -37,22 +37,25 @@ export const GallerySection = ({ photos }) => {
         Từ ghế nhà trường năm ấy đến lễ đường hôm nay là tròn 10 năm thanh xuân rực rỡ nhất của chúng mình. Cảm ơn tháng năm đã không làm phai nhòa đi những rung động đầu đời, mà còn tôi luyện tình yêu ấy thêm vững chãi, để hai đứa trẻ năm nào nay chính thức gọi nhau là gia đình. Mời bạn cùng ngắm nhìn những khoảnh khắc hạnh phúc của chúng mình nhé ♡
       </p>
 
-      {/* 4 Preview Grid */}
+      {/* Photo Grid */}
       <div className="grid grid-cols-2 gap-2.5 max-w-[340px] mx-auto">
         {photos.slice(0, 4).map((photo, index) => {
           const isLastPreview = index === 3;
           const remainingCount = photos.length - 4;
+          const isThreePhotoHero = photos.length === 3 && index === 0;
 
           return (
             <div
               key={photo.id}
               onClick={() => openLightbox(index)}
-              className="relative aspect-square rounded-2xl overflow-hidden cursor-pointer shadow-md group border-2 border-white transition-transform duration-300 hover:scale-[1.03]"
+              className={`relative rounded-2xl overflow-hidden cursor-pointer shadow-md group border-2 border-white transition-transform duration-300 hover:scale-[1.03] ${
+                isThreePhotoHero ? 'col-span-2 aspect-[4/3]' : 'aspect-square'
+              }`}
             >
               <img
                 src={photo.thumb}
                 alt={photo.caption}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover object-[center_35%] transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
               />
 
@@ -61,7 +64,7 @@ export const GallerySection = ({ photos }) => {
                 <Maximize2 size={20} />
               </div>
 
-              {/* +5 overlay for the 4th image */}
+              {/* +N overlay if > 4 photos */}
               {isLastPreview && remainingCount > 0 && (
                 <div className="absolute inset-0 bg-[#35251E]/60 backdrop-blur-[2px] flex flex-col items-center justify-center text-white p-2">
                   <Camera size={22} className="mb-1 text-[#FEE387]" />

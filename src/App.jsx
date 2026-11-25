@@ -9,6 +9,7 @@ import { RSVPModal } from './components/RSVPModal';
 import { GiftBoxModal } from './components/GiftBoxModal';
 import { AudioPlayer } from './components/AudioPlayer';
 import { AdminRSVPPage } from './components/AdminRSVPPage';
+import { FallingPetals } from './components/FallingPetals';
 
 const isAdminRoute = () => {
   const path = window.location.pathname.replace(/\/+$/, '');
@@ -26,6 +27,7 @@ export default function App() {
   const [couplePhoto, setCouplePhoto] = useState('/couple.jpg');
 
   const fileInputRef = useRef(null);
+  const audioPlayRef = useRef(null);
 
   useEffect(() => {
     const handleLocationChange = () => setShowAdmin(isAdminRoute());
@@ -63,6 +65,9 @@ export default function App() {
       <div className="floral-ambient-bg" />
       <div className="floral-ambient-overlay" />
 
+      {/* Falling Romantic Petals */}
+      {!showEnvelope && <FallingPetals />}
+
       {/* Hidden File Input for Custom Couple Photo */}
       <input
         type="file"
@@ -75,7 +80,13 @@ export default function App() {
       {/* Interactive Splash Envelope */}
       <SplashEnvelope
         isOpen={showEnvelope}
-        onOpen={() => setShowEnvelope(false)}
+        onOpen={() => {
+          setShowEnvelope(false);
+          // Auto-play music when user opens the invitation (triggered by user gesture = safe)
+          setTimeout(() => {
+            if (audioPlayRef.current) audioPlayRef.current();
+          }, 500);
+        }}
         data={weddingData}
       />
 
@@ -155,6 +166,7 @@ export default function App() {
               musicOff: 'Tắt nhạc'
             }
           }}
+          playRef={audioPlayRef}
         />
 
         {/* Modals */}

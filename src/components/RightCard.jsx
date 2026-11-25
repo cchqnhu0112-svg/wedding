@@ -10,6 +10,7 @@ import { GallerySection } from './GallerySection';
 import { GuestbookSection } from './GuestbookSection';
 import { weddingData } from '../weddingData';
 import { Gift, CalendarCheck, Clock } from 'lucide-react';
+import { ScrollReveal } from './ScrollReveal';
 
 export const RightCard = ({ onOpenRSVP, onOpenGiftBox }) => {
   return (
@@ -24,7 +25,7 @@ export const RightCard = ({ onOpenRSVP, onOpenGiftBox }) => {
         <div className="absolute top-12 left-1 w-8 h-8 rounded-full border-2 border-[#F48FB1] opacity-75 pointer-events-none -rotate-45" />
 
         {/* Pastel blue flower doodle on right (như hình số 2) */}
-        <div className="absolute top-1 right-1 transform rotate-12 pointer-events-none">
+        <div className="absolute top-1 right-1 transform rotate-12 pointer-events-none animate-swing">
           <FlowerDoodle size={44} petalColor="#A6CEE3" centerColor="#FFF" />
         </div>
 
@@ -32,18 +33,23 @@ export const RightCard = ({ onOpenRSVP, onOpenGiftBox }) => {
         <div className="absolute top-20 -right-1 w-3.5 h-28 bg-[#F48FB1]/75 rounded-full transform -rotate-12 pointer-events-none" />
 
         {/* Header Badge */}
-        <div className="relative z-10 mb-5">
+        <ScrollReveal variant="down" delay={100} className="relative z-10 mb-5">
           <DoodleBadge color="#9EB05B" textColor="#8B9B4B">
             LỊCH TRÌNH LỄ VU QUY
           </DoodleBadge>
-        </div>
+        </ScrollReveal>
 
         {/* (Đã bỏ ô nội dung hôn lễ thánh đường theo yêu cầu) */}
 
         {/* Timeline Items - Bố cục nội dung giữ nguyên, font số đồng bộ với font chữ */}
         <div className="space-y-4 relative z-10 text-left max-w-[310px] mx-auto pl-2 border-l-2 border-dashed border-[#A6CEE3] my-4">
           {weddingData.timeline.map((item, idx) => (
-            <div key={idx} className="relative pl-4 group">
+            <ScrollReveal
+              key={idx}
+              variant={idx % 2 === 0 ? 'left' : 'right'}
+              delay={idx * 110}
+              className="relative pl-4 group"
+            >
               {/* Dot icon */}
               <div className="absolute -left-[21px] top-1 w-3.5 h-3.5 rounded-full bg-[#A6CEE3] border-2 border-white shadow-xs group-hover:scale-125 transition-transform" />
               <div className="flex items-baseline gap-2">
@@ -65,7 +71,7 @@ export const RightCard = ({ onOpenRSVP, onOpenGiftBox }) => {
                   {item.desc}
                 </p>
               )}
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 
@@ -74,7 +80,7 @@ export const RightCard = ({ onOpenRSVP, onOpenGiftBox }) => {
       </div>
 
       {/* ================= 2. XÁC NHẬN THAM DỰ (RSVP CTA) ================= */}
-      <div className="relative text-center my-3 px-2">
+      <ScrollReveal variant="up" delay={100} className="relative text-center my-3 px-2">
         <div className="relative z-10 mb-2">
           <DoodleBadge color="#9EB05B" textColor="#8B9B4B">
             XÁC NHẬN THAM DỰ
@@ -92,25 +98,27 @@ export const RightCard = ({ onOpenRSVP, onOpenGiftBox }) => {
 
         <button
           onClick={onOpenRSVP}
-          className="bg-[#9EB05B] hover:bg-[#8CA048] text-white font-serif font-bold text-xs tracking-widest uppercase px-8 py-3 rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 mx-auto active:scale-95"
+          className="bg-[#9EB05B] hover:bg-[#8CA048] text-white font-serif font-bold text-xs tracking-widest uppercase px-8 py-3 rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 mx-auto active:scale-95 animate-pulse-soft"
         >
           <CalendarCheck size={15} />
           <span>XÁC NHẬN THAM DỰ (RSVP)</span>
         </button>
-      </div>
+      </ScrollReveal>
 
       {/* ================= 3. ALBUM ẢNH CƯỚI ================= */}
-      <GallerySection photos={weddingData.gallery} />
+      <ScrollReveal variant="up" delay={100}>
+        <GallerySection photos={weddingData.gallery} />
+      </ScrollReveal>
 
       {/* ================= 4. HỘP QUÀ MỪNG (GIFT BOX CTA) ================= */}
-      <div className="relative text-center my-4 px-2">
+      <ScrollReveal variant="bounce" delay={100} className="relative text-center my-4 px-2">
         {/* Soft green flower on right */}
-        <div className="absolute -top-1 right-2 transform rotate-15">
+        <div className="absolute -top-1 right-2 transform rotate-15 animate-swing">
           <FlowerDoodle size={42} petalColor="#A5B868" centerColor="#FFF" />
         </div>
 
         {/* Small pink flower on left */}
-        <div className="absolute top-8 left-1 transform -rotate-12">
+        <div className="absolute top-8 left-1 transform -rotate-12 animate-swing-slow">
           <FlowerDoodle size={28} petalColor="#F48FB1" centerColor="#FFF" />
         </div>
 
@@ -137,18 +145,20 @@ export const RightCard = ({ onOpenRSVP, onOpenGiftBox }) => {
         </button>
 
         <div className="w-4/5 mx-auto h-2.5 bg-[#FDE596]/50 rounded-full mt-4 transform rotate-1" />
-      </div>
+      </ScrollReveal>
 
       {/* ================= 5. SỔ LƯU BÚT ================= */}
-      <GuestbookSection
-        initialWishes={weddingData.initialWishes}
-        suggestedWishes={weddingData.suggestedWishes}
-      />
+      <ScrollReveal variant="up" delay={100}>
+        <GuestbookSection
+          initialWishes={weddingData.initialWishes}
+          suggestedWishes={weddingData.suggestedWishes}
+        />
+      </ScrollReveal>
 
       {/* ================= 6. LIÊN HỆ ĐIỀU PHỐI VIÊN ================= */}
-      <div className="relative text-center my-4 px-2">
+      <ScrollReveal variant="up" delay={100} className="relative text-center my-4 px-2">
         {/* Yellow flower on left */}
-        <div className="absolute top-2 left-2 transform -rotate-12">
+        <div className="absolute top-2 left-2 transform -rotate-12 animate-swing">
           <FlowerDoodle size={36} petalColor="#FEE387" centerColor="#FFF" />
         </div>
 
@@ -176,10 +186,10 @@ export const RightCard = ({ onOpenRSVP, onOpenGiftBox }) => {
         <div className="my-2">
           <WavyDivider color="#9FD4EE" />
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* ================= 7. CLOSING ("С НЕТЕРПЕНИЕМ ЖДЕМ ВАС!") ================= */}
-      <div className="relative text-center my-3 mb-5 px-2">
+      <ScrollReveal variant="bounce" delay={100} className="relative text-center my-3 mb-5 px-2">
         <DoodleBadge
           color="#9EB05B"
           textColor="#EE6C8D"
@@ -189,9 +199,9 @@ export const RightCard = ({ onOpenRSVP, onOpenGiftBox }) => {
           RẤT MONG ĐƯỢC ĐÓN TIẾP BẠN!
         </DoodleBadge>
         <p className="text-[10px] sm:text-[11px] text-[#8A7968] italic mt-1 whitespace-nowrap tracking-tight">
-          Sự hiện diện của quý khách là niềm vinh hạnh của gia đình chúng tôi!
+          Sự hiện diện của quý khách là niềm vinh hạnh của gia đình chúng mình!
         </p>
-      </div>
+      </ScrollReveal>
 
     </div>
   );

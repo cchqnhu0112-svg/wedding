@@ -5,6 +5,7 @@ import {
   SketchyArrow
 } from './DoodleSVGs';
 import { weddingData } from '../weddingData';
+import { ScrollReveal } from './ScrollReveal';
 
 export const LeftCard = ({
   onOpenMap,
@@ -44,82 +45,89 @@ export const LeftCard = ({
             </svg>
 
             <div className="relative z-10">
-              <span className="font-serif text-[#8F9F52] text-xs font-bold tracking-widest uppercase block mb-1">
-                SAVE THE DATE
-              </span>
+              <ScrollReveal variant="down" delay={100}>
+                <span className="font-serif text-[#8F9F52] text-xs font-bold tracking-widest uppercase block mb-1">
+                  SAVE THE DATE
+                </span>
 
-              <h1 className="font-serif text-[#EE6C8D] font-bold text-base sm:text-lg md:text-xl tracking-wider uppercase leading-tight mb-1">
-                TRÂN TRỌNG BÁO TIN
-              </h1>
+                <h1 className="font-serif text-[#EE6C8D] font-bold text-base sm:text-lg md:text-xl tracking-wider uppercase leading-tight mb-1">
+                  TRÂN TRỌNG BÁO TIN
+                </h1>
 
-              {/* LỄ VU QUY CỦA CHÚNG TÔI */}
-              <p className="text-[#8F9F52] text-xs font-bold tracking-widest uppercase mb-3">
-                LỄ VU QUY CỦA CHÚNG TÔI
-              </p>
+                {/* LỄ VU QUY CỦA CHÚNG MÌNH */}
+                <p className="text-[#8F9F52] text-xs font-bold tracking-widest uppercase mb-3">
+                  LỄ VU QUY CỦA CHÚNG MÌNH
+                </p>
+              </ScrollReveal>
 
               {/* Couple Row: Balanced layout with comfortable room inside frame */}
-              <div className="relative w-full flex items-center justify-between px-2 my-2">
+              <div className="relative w-full flex items-center justify-between px-1 sm:px-1.5 my-2 gap-1">
                 {/* Groom */}
-                <div className="flex-1 text-center pr-1.5 sm:pr-2 z-10 flex flex-col items-center justify-center min-w-0">
-                  <span className="font-serif text-[#EE6C8D] font-bold text-xs sm:text-[13px] tracking-wide whitespace-nowrap block">
+                <ScrollReveal variant="left" delay={250} className="flex-1 text-center pr-0.5 sm:pr-1.5 z-10 flex flex-col items-center justify-center min-w-0">
+                  <span className="font-serif text-[#EE6C8D] font-bold text-[11px] sm:text-[13px] tracking-normal sm:tracking-wide whitespace-nowrap block">
                     {weddingData.groom.shortName}
                   </span>
                   <span className="font-serif text-[9px] sm:text-[10px] text-[#8F9F52] font-semibold mt-0.5 tracking-wider whitespace-nowrap block">
                     (Thứ nam)
                   </span>
-                </div>
+                </ScrollReveal>
 
                 {/* Center Couple Photo with pink heart shape background */}
-                <div
+                <ScrollReveal
+                  variant="bounce"
+                  delay={350}
                   className="relative mx-auto my-1 flex-shrink-0 group cursor-pointer"
-                  onClick={onChangePhoto}
-                  title="Nhấn để đổi ảnh cưới"
                 >
-                  <div className="relative w-[96px] h-[142px] sm:w-[106px] sm:h-[156px] flex items-center justify-center p-1 transition-transform duration-300 group-hover:scale-[1.02]">
-                    {/* Pink heart/card shape backdrop */}
-                    <div className="absolute inset-0 bg-[#F6A5BD] rounded-2xl sm:rounded-3xl opacity-90 shadow-md transform -rotate-1" />
+                  <div
+                    onClick={onChangePhoto}
+                    title="Nhấn để đổi ảnh cưới"
+                  >
+                    <div className="relative w-[88px] h-[130px] sm:w-[98px] sm:h-[146px] flex items-center justify-center p-1 transition-transform duration-300 group-hover:scale-[1.03]">
+                      {/* Pink heart/card shape backdrop */}
+                      <div className="absolute inset-0 bg-[#F6A5BD] rounded-2xl sm:rounded-3xl opacity-90 shadow-md transform -rotate-1" />
 
-                    {/* Photo frame */}
-                    <div className="relative w-full h-full rounded-xl sm:rounded-2xl overflow-hidden bg-[#FAECEF] border-2 border-white/80 shadow-inner">
-                      <img
-                        src={couplePhoto || "/couple.jpg"}
-                        alt="Thanh Sơn & Quỳnh Như"
-                        className="w-full h-full object-cover object-top filter contrast-[1.03]"
-                        onError={(e) => {
-                          e.target.src = "/original_design.jpg";
-                        }}
-                      />
-                      {/* Hover overlay hint */}
-                      <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-[10px] font-medium text-center p-1">
-                        <span className="text-xs mb-0.5">📷</span>
-                        <span>Đổi ảnh</span>
+                      {/* Photo frame */}
+                      <div className="relative w-full h-full rounded-xl sm:rounded-2xl overflow-hidden bg-[#FAECEF] border-2 border-white/80 shadow-inner">
+                        <img
+                          src={couplePhoto || "/couple.jpg"}
+                          alt="Thanh Sơn & Quỳnh Như"
+                          className="w-full h-full object-cover object-top filter contrast-[1.03]"
+                          onError={(e) => {
+                            e.target.src = "/original_design.jpg";
+                          }}
+                        />
+                        {/* Hover overlay hint */}
+                        <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-[10px] font-medium text-center p-1">
+                          <span className="text-xs mb-0.5">📷</span>
+                          <span>Đổi ảnh</span>
+                        </div>
+                      </div>
+
+                      {/* White Ribbon Bow on top-left */}
+                      <div className="absolute -top-2.5 -left-2.5 transform -rotate-12 drop-shadow-xs z-10 animate-swing">
+                        <RibbonBow size={28} color="#FFFFFF" />
                       </div>
                     </div>
-
-                    {/* White Ribbon Bow on top-left */}
-                    <div className="absolute -top-2.5 -left-2.5 transform -rotate-12 drop-shadow-xs z-10">
-                      <RibbonBow size={28} color="#FFFFFF" />
-                    </div>
                   </div>
-                </div>
+                </ScrollReveal>
 
                 {/* Bride */}
-                <div className="flex-1 text-center pl-1.5 sm:pl-2 z-10 flex flex-col items-center justify-center min-w-0">
-                  <span className="font-serif text-[#EE6C8D] font-bold text-xs sm:text-[13px] tracking-wide whitespace-nowrap block">
+                <ScrollReveal variant="right" delay={250} className="flex-1 text-center pl-0.5 sm:pl-1.5 z-10 flex flex-col items-center justify-center min-w-0">
+                  <span className="font-serif text-[#EE6C8D] font-bold text-[11px] sm:text-[13px] tracking-normal sm:tracking-wide whitespace-nowrap block">
                     {weddingData.bride.shortName}
                   </span>
                   <span className="font-serif text-[9px] sm:text-[10px] text-[#8F9F52] font-semibold mt-0.5 tracking-wider whitespace-nowrap block">
                     (Út nữ)
                   </span>
-                </div>
+                </ScrollReveal>
               </div>
 
               {/* Dưới chân tấm hình chèn thêm ngày 26.12.2026 */}
-              <div className="mt-2 text-center">
+              <ScrollReveal variant="up" delay={450} className="mt-2 text-center">
                 <span className="font-sans text-[#8B9B4B] font-bold text-sm sm:text-base tracking-widest block">
                   26.12.2026
                 </span>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
 
@@ -132,17 +140,17 @@ export const LeftCard = ({
         
         {/* Decorative Doodles from Image 2 */}
         {/* Pastel Yellow Flower on Top Right */}
-        <div className="absolute -top-1.5 -right-1.5 transform rotate-12 pointer-events-none z-0">
+        <div className="absolute -top-1.5 -right-1.5 transform rotate-12 pointer-events-none z-0 animate-swing">
           <FlowerDoodle size={44} petalColor="#FEE387" centerColor="#FFF" />
         </div>
 
         {/* Big Pink Flower on Lower Right (Dời xuống để không chạm vào chữ Thanh Sơn sau khi phóng to) */}
-        <div className="absolute top-[56%] -right-3 transform rotate-12 pointer-events-none z-0 opacity-80">
+        <div className="absolute top-[56%] -right-3 transform rotate-12 pointer-events-none z-0 opacity-80 animate-swing-slow">
           <FlowerDoodle size={44} petalColor="#F48FB1" centerColor="#FFF" />
         </div>
 
         {/* Pastel Blue Flower on Bottom Left */}
-        <div className="absolute bottom-2 -left-2 transform -rotate-15 pointer-events-none z-0">
+        <div className="absolute bottom-2 -left-2 transform -rotate-15 pointer-events-none z-0 animate-swing">
           <FlowerDoodle size={36} petalColor="#A6CEE3" centerColor="#FFF" />
         </div>
 
@@ -152,7 +160,7 @@ export const LeftCard = ({
         {/* 1. & 2. NHÀ GÁI & NHÀ TRAI (With Vertical Coral Accent Bar) */}
         <div className="relative z-10 border-l-2 border-[#EE6C8D] pl-3 sm:pl-3.5 space-y-3.5">
           {/* 1. NHÀ GÁI */}
-          <div>
+          <ScrollReveal variant="left" delay={100}>
             <h4 className="font-serif text-[#EE6C8D] font-bold text-xs sm:text-[13px] uppercase tracking-widest mb-1">
               NHÀ GÁI
             </h4>
@@ -163,10 +171,10 @@ export const LeftCard = ({
             <p className="text-[11px] text-[#8A7968] mt-1 leading-relaxed">
               2077/6 Phương Lâm, Phú Lâm, TP. Đồng Nai.
             </p>
-          </div>
+          </ScrollReveal>
 
           {/* 2. NHÀ TRAI */}
-          <div>
+          <ScrollReveal variant="right" delay={200}>
             <h4 className="font-serif text-[#8B9B4B] font-bold text-xs sm:text-[13px] uppercase tracking-widest mb-1">
               NHÀ TRAI
             </h4>
@@ -177,21 +185,21 @@ export const LeftCard = ({
             <p className="text-[11px] text-[#8A7968] mt-1 leading-relaxed">
               3523 Phú Lâm 3, Phú Lâm, TP. Đồng Nai
             </p>
-          </div>
+          </ScrollReveal>
 
-          {/* 1. THÂN MỜI TỚI DỰ TIỆC CƯỚI CỦA CHÚNG TÔI (Bỏ chữ THÂN MẬT đi) */}
-          <div className="pt-0.5">
+          {/* 1. THÂN MỜI TỚI DỰ TIỆC CƯỚI CỦA CHÚNG MÌNH (Bỏ chữ THÂN MẬT đi) */}
+          <ScrollReveal variant="up" delay={250} className="pt-0.5">
             <p className="font-serif text-xs font-bold tracking-wider text-[#EE6C8D] uppercase leading-relaxed">
-              THÂN MỜI TỚI DỰ TIỆC CƯỚI CỦA CHÚNG TÔI
+              THÂN MỜI TỚI DỰ TIỆC CƯỚI CỦA CHÚNG MÌNH
             </p>
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* MIDDLE SECTION: Hand-Drawn Duo Flowers on Left & Zoomed Couple Names on Right */}
         <div className="relative z-10 my-5 sm:my-6 flex items-center justify-between gap-1.5 px-0.5">
           {/* Left: Cute Duo of Doodle Stem Flowers (Thêm 1 bông nữa cho đỡ trống) */}
-          <div className="w-[85px] sm:w-[95px] flex-shrink-0 flex items-center justify-center">
-            <svg viewBox="0 0 110 135" fill="none" className="w-full h-auto max-h-[125px]">
+          <ScrollReveal variant="left" delay={150} className="w-[85px] sm:w-[95px] flex-shrink-0 flex items-center justify-center">
+            <svg viewBox="0 0 110 135" fill="none" className="w-full h-auto max-h-[125px] animate-swing-slow">
               {/* Stem of Flower 1 (taller) */}
               <path d="M 45 48 Q 42 85 36 128" stroke="#8B9B4B" strokeWidth="2.5" strokeLinecap="round" />
               {/* Leaves of Flower 1 */}
@@ -221,10 +229,10 @@ export const LeftCard = ({
               <circle cx="78" cy="61" r="7.5" fill="#FEE387" stroke="#EE6C8D" strokeWidth="1.4" />
               <path d="M 76 60 C 76 58 80 58 80 61 C 80 62 77 62 78 60" stroke="#EE6C8D" strokeWidth="1.2" strokeLinecap="round" />
             </svg>
-          </div>
+          </ScrollReveal>
 
           {/* Right: Couple Names (Zoom to hơn, giữ trên 1 dòng, Út Nữ & Thứ Nam) */}
-          <div className="flex-1 flex flex-col items-end text-right pr-0.5 sm:pr-1.5 z-10">
+          <ScrollReveal variant="right" delay={200} className="flex-1 flex flex-col items-end text-right pr-0.5 sm:pr-1.5 z-10">
             {/* Quỳnh Như on 1 single line - Zoomed Bigger */}
             <div className="flex flex-col items-end">
               <span className="font-serif text-2xl sm:text-[28px] md:text-3xl font-bold text-[#EE6C8D] whitespace-nowrap tracking-wide leading-tight">
@@ -249,11 +257,11 @@ export const LeftCard = ({
                 (Thứ Nam)
               </span>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* 3. ĐƯỢC TỔ CHỨC VÀO LÚC (With Vertical Coral Accent Bar) */}
-        <div className="relative z-10 border-l-2 border-[#EE6C8D] pl-3 sm:pl-3.5 space-y-2.5">
+        <ScrollReveal variant="up" delay={150} className="relative z-10 border-l-2 border-[#EE6C8D] pl-3 sm:pl-3.5 space-y-2.5">
           {/* Time & Day - Số dùng font serif thanh lịch hài hòa với tổng thể */}
           <div>
             <span className="font-serif text-[#8B9B4B] font-bold text-xs uppercase tracking-widest block">
@@ -311,22 +319,22 @@ export const LeftCard = ({
               href={weddingData.reception.directionsUrl}
               target="_blank"
               rel="noreferrer"
-              className="bg-[#9EB05B] hover:bg-[#8CA048] active:scale-95 text-white font-serif font-bold text-xs tracking-widest uppercase px-8 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all inline-flex items-center justify-center gap-1.5 cursor-pointer"
+              className="bg-[#9EB05B] hover:bg-[#8CA048] active:scale-95 text-white font-serif font-bold text-xs tracking-widest uppercase px-8 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all inline-flex items-center justify-center gap-1.5 cursor-pointer animate-pulse-soft"
             >
               <span>📍</span>
               <span>CHỈ ĐƯỜNG</span>
             </a>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
 
       {/* ================= 3. THÂN MỜI DỰ BỮA CƠM THÂN MẬT ================= */}
-      <div className="relative w-full rounded-3xl overflow-hidden my-3 shadow-xs border border-[#EADBBD] bg-[#FAF5EA] p-4 sm:p-5 text-left transition-all">
+      <ScrollReveal variant="up" delay={100} className="relative w-full rounded-3xl overflow-hidden my-3 shadow-xs border border-[#EADBBD] bg-[#FAF5EA] p-4 sm:p-5 text-left transition-all">
         {/* Decorative pastel flowers */}
-        <div className="absolute -top-1.5 -right-1.5 transform rotate-12 pointer-events-none z-0">
+        <div className="absolute -top-1.5 -right-1.5 transform rotate-12 pointer-events-none z-0 animate-swing">
           <FlowerDoodle size={38} petalColor="#FEE387" centerColor="#FFF" />
         </div>
-        <div className="absolute bottom-2 -right-2 transform -rotate-12 pointer-events-none z-0">
+        <div className="absolute bottom-2 -right-2 transform -rotate-12 pointer-events-none z-0 animate-swing-slow">
           <FlowerDoodle size={36} petalColor="#F48FB1" centerColor="#FFF" />
         </div>
 
@@ -397,7 +405,7 @@ export const LeftCard = ({
             </a>
           </div>
         </div>
-      </div>
+      </ScrollReveal>
 
     </div>
   );

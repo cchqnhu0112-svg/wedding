@@ -163,11 +163,11 @@ export const RSVPModal = ({ isOpen, onClose, data }) => {
                 Xác Nhận Tham Dự
               </h3>
               <p className="text-xs text-[#7A5B64] mt-1 italic">
-                "Sự hiện diện của bạn là niềm vinh hạnh cho gia đình chúng tôi. Xin xác nhận trước ngày{' '}
+                "Sự hiện diện của bạn là niềm vinh hạnh cho gia đình chúng mình. Xin xác nhận trước ngày{' '}
                 <span className="font-bold not-italic text-[#B82D55] bg-[#FEE99A] px-1 py-0.5 rounded">
                   12.12.2026
                 </span>{' '}
-                để chúng tôi chuẩn bị chu đáo nhất."
+                để chúng mình chuẩn bị chu đáo nhất."
               </p>
             </div>
 

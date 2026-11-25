@@ -76,7 +76,7 @@ export const SplashEnvelope = ({ isOpen, onOpen, data }) => {
             </span>
 
             {/* 1. Tên cô dâu chú rể nằm trên CÙNG MỘT DÒNG */}
-            <h1 className="font-serif text-lg sm:text-xl md:text-2xl font-bold text-[#EE6C8D] tracking-wide whitespace-nowrap overflow-hidden text-ellipsis mb-2">
+            <h1 className="font-serif text-[16px] sm:text-xl md:text-2xl font-bold text-[#EE6C8D] tracking-wide whitespace-nowrap mb-2">
               {data.groom.shortName} & {data.bride.shortName}
             </h1>
 
@@ -91,7 +91,7 @@ export const SplashEnvelope = ({ isOpen, onOpen, data }) => {
 
             {/* Lời mời */}
             <p className="text-xs text-[#7A5B64] leading-relaxed max-w-[270px] mx-auto mb-5 italic">
-              Trân trọng kính mời quý khách đến chung vui cùng gia đình chúng tôi trong ngày trọng đại!
+              Trân trọng kính mời quý khách đến chung vui cùng gia đình chúng mình trong ngày trọng đại!
             </p>
 
             {/* Nút bấm Mở thiệp */}
