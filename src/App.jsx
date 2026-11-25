@@ -24,9 +24,7 @@ export default function App() {
   const [isMapOpen, setIsMapOpen] = useState(false);
   const [isRSVPOpen, setIsRSVPOpen] = useState(false);
   const [isGiftBoxOpen, setIsGiftBoxOpen] = useState(false);
-  const [couplePhoto, setCouplePhoto] = useState('/couple.jpg');
 
-  const fileInputRef = useRef(null);
   const audioPlayRef = useRef(null);
 
   useEffect(() => {
@@ -50,14 +48,6 @@ export default function App() {
     );
   }
 
-  const handlePhotoUpload = (e) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const url = URL.createObjectURL(file);
-      setCouplePhoto(url);
-    }
-  };
-
   return (
     <div className="min-h-screen relative overflow-x-hidden font-sans selection:bg-[#F48FB1] selection:text-white">
       
@@ -67,15 +57,6 @@ export default function App() {
 
       {/* Falling Romantic Petals */}
       {!showEnvelope && <FallingPetals />}
-
-      {/* Hidden File Input for Custom Couple Photo */}
-      <input
-        type="file"
-        ref={fileInputRef}
-        onChange={handlePhotoUpload}
-        accept="image/*"
-        className="hidden"
-      />
 
       {/* Interactive Splash Envelope */}
       <SplashEnvelope
@@ -116,8 +97,6 @@ export default function App() {
               <div className="w-full max-w-[390px]">
                 <LeftCard
                   onOpenMap={() => setIsMapOpen(true)}
-                  couplePhoto={couplePhoto}
-                  onChangePhoto={() => fileInputRef.current?.click()}
                 />
               </div>
 
@@ -139,8 +118,6 @@ export default function App() {
               <div className="max-h-[82vh] overflow-y-auto rounded-3xl space-y-4 pr-1">
                 <LeftCard
                   onOpenMap={() => setIsMapOpen(true)}
-                  couplePhoto={couplePhoto}
-                  onChangePhoto={() => fileInputRef.current?.click()}
                 />
                 <RightCard
                   onOpenRSVP={() => setIsRSVPOpen(true)}

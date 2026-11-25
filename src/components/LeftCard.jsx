@@ -8,9 +8,7 @@ import { weddingData } from '../weddingData';
 import { ScrollReveal } from './ScrollReveal';
 
 export const LeftCard = ({
-  onOpenMap,
-  couplePhoto,
-  onChangePhoto
+  onOpenMap
 }) => {
   return (
     <div className="wedding-column w-full max-w-[390px] mx-auto bg-[#FBF7EE] text-[#555] rounded-3xl shadow-2xl overflow-hidden border border-[#F0E6D2] flex flex-col p-4 md:p-5 relative transition-all duration-300">
@@ -72,41 +70,31 @@ export const LeftCard = ({
                   </span>
                 </ScrollReveal>
 
-                {/* Center Couple Photo with pink heart shape background */}
+                {/* Center Couple Photo with pink heart shape background (fixed, non-editable) */}
                 <ScrollReveal
                   variant="bounce"
                   delay={350}
-                  className="relative mx-auto my-1 flex-shrink-0 group cursor-pointer"
+                  className="relative mx-auto my-1 flex-shrink-0"
                 >
-                  <div
-                    onClick={onChangePhoto}
-                    title="Nhấn để đổi ảnh cưới"
-                  >
-                    <div className="relative w-[88px] h-[130px] sm:w-[98px] sm:h-[146px] flex items-center justify-center p-1 transition-transform duration-300 group-hover:scale-[1.03]">
-                      {/* Pink heart/card shape backdrop */}
-                      <div className="absolute inset-0 bg-[#F6A5BD] rounded-2xl sm:rounded-3xl opacity-90 shadow-md transform -rotate-1" />
+                  <div className="relative w-[88px] h-[130px] sm:w-[98px] sm:h-[146px] flex items-center justify-center p-1">
+                    {/* Pink heart/card shape backdrop */}
+                    <div className="absolute inset-0 bg-[#F6A5BD] rounded-2xl sm:rounded-3xl opacity-90 shadow-md transform -rotate-1" />
 
-                      {/* Photo frame */}
-                      <div className="relative w-full h-full rounded-xl sm:rounded-2xl overflow-hidden bg-[#FAECEF] border-2 border-white/80 shadow-inner">
-                        <img
-                          src={couplePhoto || "/couple.jpg"}
-                          alt="Thanh Sơn & Quỳnh Như"
-                          className="w-full h-full object-cover object-top filter contrast-[1.03]"
-                          onError={(e) => {
-                            e.target.src = "/original_design.jpg";
-                          }}
-                        />
-                        {/* Hover overlay hint */}
-                        <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-[10px] font-medium text-center p-1">
-                          <span className="text-xs mb-0.5">📷</span>
-                          <span>Đổi ảnh</span>
-                        </div>
-                      </div>
+                    {/* Photo frame */}
+                    <div className="relative w-full h-full rounded-xl sm:rounded-2xl overflow-hidden bg-[#FAECEF] border-2 border-white/80 shadow-inner">
+                      <img
+                        src="/couple.webp"
+                        alt="Thanh Sơn & Quỳnh Như"
+                        className="w-full h-full object-cover object-top filter contrast-[1.03]"
+                        onError={(e) => {
+                          e.target.src = "/original_design.jpg";
+                        }}
+                      />
+                    </div>
 
-                      {/* White Ribbon Bow on top-left */}
-                      <div className="absolute -top-2.5 -left-2.5 transform -rotate-12 drop-shadow-xs z-10 animate-swing">
-                        <RibbonBow size={28} color="#FFFFFF" />
-                      </div>
+                    {/* White Ribbon Bow on top-left */}
+                    <div className="absolute -top-2.5 -left-2.5 transform -rotate-12 drop-shadow-xs z-10 animate-swing">
+                      <RibbonBow size={28} color="#FFFFFF" />
                     </div>
                   </div>
                 </ScrollReveal>
