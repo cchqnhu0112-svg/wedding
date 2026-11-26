@@ -359,7 +359,7 @@ export const RSVPModal = ({ isOpen, onClose, data }) => {
                         <div>
                           <span className="font-semibold text-[#333]">🚌 Đi xe đưa đón của gia đình</span>
                           <span className="block text-[10.5px] text-[#7A5B64] leading-relaxed mt-0.5 bg-[#FAF4EB] p-2 rounded-lg border border-[#EADBBD]">
-                            📍 Gia đình có chuẩn bị xe đưa đón. Quý khách vui lòng có mặt tại <strong>Bến xe Miền Đông cũ (Q. Bình Thạnh) lúc 08:00 sáng</strong> để xe khởi hành đúng giờ.
+                            📍 Gia đình có chuẩn bị xe đưa đón. Quý khách vui lòng có mặt tại <strong>Bến xe Miền Đông cũ (Q. Bình Thạnh) lúc 08:00 sáng ngày 25/12/2026</strong> để xe khởi hành đúng giờ.
                           </span>
                         </div>
                       </label>

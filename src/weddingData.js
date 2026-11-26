@@ -161,7 +161,7 @@ export const weddingData = {
     { id: 17, url: "/album/wedding-10.jpg",    thumb: "/album/wedding-10.jpg",    caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
     { id: 18, url: "/album/wedding-11.jpg",    thumb: "/album/wedding-11.jpg",    caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
     { id: 19, url: "/album/wedding-12.jpg",    thumb: "/album/wedding-12.jpg",    caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
-    { id: 20, url: "/album/wedding-13.webp",   thumb: "/album/wedding-13.webp",   caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
+    { id: 20, url: "/album/wedding-13.jpg",    thumb: "/album/wedding-13.jpg",    caption: "It's time, chúng mình cưới đây! 💕\nMong rằng chúng mình sẽ có thêm thật nhiều lần mười năm cùng nhau" },
   ],
 
   // Guestbook Wishes (Sample wishes tailored for Thanh Sơn & Quỳnh Như)

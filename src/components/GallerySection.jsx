@@ -49,13 +49,13 @@ export const GallerySection = ({ photos }) => {
               key={photo.id}
               onClick={() => openLightbox(index)}
               className={`relative rounded-2xl overflow-hidden cursor-pointer shadow-md group border-2 border-white transition-transform duration-300 hover:scale-[1.03] ${
-                isThreePhotoHero ? 'col-span-2 aspect-[4/3]' : 'aspect-square'
+                isThreePhotoHero ? 'col-span-2 aspect-[4/3]' : 'aspect-[4/5]'
               }`}
             >
               <img
                 src={photo.thumb}
                 alt={photo.caption}
-                className="w-full h-full object-cover object-[center_35%] transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
               />
 
@@ -105,11 +105,11 @@ export const GallerySection = ({ photos }) => {
             </div>
 
             {/* Main Active Photo */}
-            <div className="relative w-full max-h-[68vh] flex items-center justify-center overflow-hidden rounded-2xl my-2 bg-black/40">
+            <div className="relative w-full max-w-[460px] aspect-[4/5] max-h-[68vh] flex items-center justify-center overflow-hidden rounded-2xl my-2 bg-black/40 mx-auto">
               <img
                 src={currentPhoto.url}
                 alt={currentPhoto.caption}
-                className="max-h-[68vh] w-auto max-w-full object-contain rounded-xl shadow-2xl animate-scale-up"
+                className="w-full h-full object-cover rounded-xl shadow-2xl animate-scale-up"
               />
 
               {/* Left Arrow */}
@@ -140,7 +140,7 @@ export const GallerySection = ({ photos }) => {
                 <button
                   key={item.id}
                   onClick={() => setSelectedIdx(i)}
-                  className={`w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 border-2 transition-all ${
+                  className={`w-10 h-12 rounded-lg overflow-hidden flex-shrink-0 border-2 transition-all ${
                     selectedIdx === i
                       ? 'border-[#EE6C8D] scale-110 shadow-lg'
                       : 'border-white/30 opacity-60 hover:opacity-100'
